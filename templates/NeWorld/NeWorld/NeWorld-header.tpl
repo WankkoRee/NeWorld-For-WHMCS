@@ -21,23 +21,22 @@
 	
 	            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse">
 	                <ul class="nav navbar-nav navbar-right">
-	                    <li {if $templatefile == 'features'} class="active"{/if}>
-	                    	<a href="{$systemurl}features.php">{$LANG.features}</a>
-	                    </li>
-	                    <li {if $templatefile == 'pricing'} class="active"{/if}>
-	                    	<a href="{$systemurl}pricing.php">{$LANG.pricing}</a>
-	                    </li>
-	                    <li class="dropdown{if $templatefile == 'vps'} active{/if}">
-	                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{$LANG.hosting} <span class="caret"></span></a>
-	
+                      <li class="dropdown">
+                        {if $languagechangeenabled && count($locales) > 1}
+			            <a href="javascript:;" id="languageChooser" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{$LANG.chooselanguage} <span class="caret"></span></a>
+			            <div id="languageChooserContent" class="hidden">
+			                <ul>
+			                    {foreach from=$locales item=locale}
+			                        <li><a href="{$currentpagelinkback}language={$locale.language}">{$locale.localisedName}</a></li>
+			                    {/foreach}
+			                </ul>
+			            </div>
+			            {/if}
+                        </li>
+	                    <li class="dropdown">
+	                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">VPN<span class="caret"></span></a>
 	                        <ul class="dropdown-menu">
-	                            <li><a href="/shadowsocks/"><i class="fa fa-paper-plane"></i> Shadowsocks</a></li>
-	
-	                            <li><a href="/sharehosting/"><i class="fa fa-group"></i> Shared Hosting</a></li>
-	
-	                            <li><a href="{$systemurl}vps.php"><i class="fa fa-cloud"></i> VPS Hosting</a></li>
-	
-	                            <li><a href="/dedicated/"><i class="fa fa-server"></i> Dedicated Hosting</a></li>
+	                            <li><a href="/cart.php?gid=1"><i class="fa fa-paper-plane"></i>V2Ray</a></li>
 	                        </ul>
 	                    </li>
 	                    <li {if $templatefile == 'contact'} class="active"{/if}>
@@ -54,9 +53,6 @@
 		                        <li>
 		                        	<a href="{$systemurl}clientarea.php?action=details"><i class="md md-face-unlock"></i> {$LANG.clientareanavdetails}</a>
 		                        </li>
-				                <li>
-				                	<a href="{$systemurl}clientarea.php?action=contacts"><i class="md md-account-box"></i> {$LANG.clientareanavcontacts}</a>
-				                </li>
 				                <li>
 				                	<a href="{$systemurl}clientarea.php?action=changepw"><i class="md md-settings"></i> {$LANG.clientareanavchangepw}</a>
 				                </li>
@@ -84,9 +80,10 @@
 	{if $templatefile == 'homepage'}
 	    	<div class="home-slider space3x">
 		    	<div class="col-sm-6 col-md-5">
-		    		<h2 class="wow fadeInDown">See Our Simple Pricing,<br/>No Bandwidth Overages!</h2>
-		    		<p class="wow fadeInDown">Form early to enterprise, we've got you covered Starts with 14 days free. Annual payment earns you two months free!</p>
-		    		<a href="#" class="btn btn-success">{$LANG.getstarted}</a>
+		    		<h2 class="wow fadeInDown">虽然价格看着很便宜，<br/>但我们的服务器绝对是高质量的！</h2>
+		    		<p class="wow fadeInDown">Although the price is very cheap, <br/>our server is absolutely high quality!</p>
+                    <a href="clientarea.php" class="btn btn-success">立即登录</a>&nbsp;&nbsp;&nbsp;&nbsp;
+		    		<a href="register.php" class="btn btn-success">{$LANG.getstarted}</a>
 		    	</div>
 	    	</div>
 	{/if}
