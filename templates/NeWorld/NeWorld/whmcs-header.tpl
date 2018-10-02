@@ -41,6 +41,7 @@
 			            <ul>
 							{if $loggedin}
 			                <li><a href="clientarea.php?action=services">{$LANG.clientareanavservices}</a></li>
+			                <li><a href="index.php?m=geninvoices">提前续费</a></li>
 			                {/if}
 			                <li><a href="cart.php">{$LANG.navservicesorder}</a></li>
 			                <li><a href="cart.php?gid=addons">{$LANG.clientareaviewaddons}</a></li>
@@ -76,7 +77,7 @@
 				        </a>
 			            <ul>
 			                <li><a href="clientarea.php?action=details">{$LANG.clientareanavdetails}</a></li>
-			                <li><a href="clientarea.php?action=contacts">{$LANG.clientareanavcontacts}</a></li>			                							<li><a href="clientarea.php?action=changepw">{$LANG.clientareanavchangepw}</a></li>
+			                <li><a href="clientarea.php?action=changepw">{$LANG.clientareanavchangepw}</a></li>
 							<li><a href="clientarea.php?action=emails">{$LANG.navemailssent}</a></li>
 			            </ul>
 			        </li>
