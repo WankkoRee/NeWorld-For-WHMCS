@@ -5,11 +5,12 @@
         <span class="sr-only">New Password Rating: 0%</span>
     </div>
 </div>
-
+{if $filename != 'register'}
 {if file_exists("templates/$template/includes/alert.tpl")}
     {include file="$template/includes/alert.tpl" type="info" msg="{$LANG.passwordtips}"}
 {elseif file_exists("templates/six/includes/alert.tpl")}
     {include file="six/includes/alert.tpl" type="info" msg="{$LANG.passwordtips}"}
+{/if}
 {/if}
 
 <script type="text/javascript">
