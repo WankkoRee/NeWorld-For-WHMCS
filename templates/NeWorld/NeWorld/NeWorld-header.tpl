@@ -71,7 +71,7 @@
 	                    </li>
 						<li><a href="{$systemurl}cart.php?a=view" class="btn btn-border"><i class="fa fa-shopping-cart"></i><span id="cartItemCount" class="badge badge-danger">{$cartitemcount}</span></a></li>
 					{else}
-						<li><a href="{$systemurl}login.php">{$LANG.clientlogin}</a></li>
+						<li class="hidden-sm"><a href="{$systemurl}login.php" class="btn btn-border">{$LANG.clientlogin}</a></li>
 						<li class="hidden-sm"><a href="{$systemurl}register.php" class="btn btn-border">{$LANG.clientregistertitle}</a></li>
 					{/if}
 	                </ul>
