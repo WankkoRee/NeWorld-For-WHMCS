@@ -82,8 +82,12 @@
 		    	<div class="col-sm-6 col-md-5">
 		    		<h2 class="wow fadeInDown">虽然价格看着很便宜，<br/>但我们的服务器绝对是高质量的！</h2>
 		    		<p class="wow fadeInDown">Although the price is very cheap, <br/>our server is absolutely high quality!</p>
+                  {if $loggedin}
+		    		<a href="clientarea.php" class="btn btn-success">{$LANG.clientareatitle}</a>
+                  {else}
                     <a href="clientarea.php" class="btn btn-success">立即登录</a>&nbsp;&nbsp;&nbsp;&nbsp;
 		    		<a href="register.php" class="btn btn-success">{$LANG.getstarted}</a>
+                  {/if}
 		    	</div>
 	    	</div>
 	{/if}
